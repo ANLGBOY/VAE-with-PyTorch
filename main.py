@@ -16,15 +16,15 @@ from torchvision.utils import save_image
 # --- parsing and configuration --- #
 parser = argparse.ArgumentParser(
     description="PyTorch implementation of VAE for MNIST")
-parser.add_argument('--batch-size', type=int, default=64,
+parser.add_argument('--batch-size', type=int, default=128,
                     help='batch size for training (default: 128)')
-parser.add_argument('--epochs', type=int, default=1000,
-                    help='number of epochs to train (default: 60)')
+parser.add_argument('--epochs', type=int, default=80,
+                    help='number of epochs to train (default: 80)')
 parser.add_argument('--z-dim', type=int, default=2,
                     help='dimension of hidden variable Z (default: 2)')
 parser.add_argument('--log-interval', type=int, default=100,
                     help='interval between logs about training status (default: 100)')
-parser.add_argument('--learning-rate', type=int, default=1e-4,
+parser.add_argument('--learning-rate', type=int, default=1e-3,
                     help='learning rate for Adam optimizer (default: 1e-3)')
 parser.add_argument('--prr', type=bool, default=True,
                     help='Boolean for plot-reproduce-result (default: True')
@@ -33,9 +33,9 @@ parser.add_argument('--prr-z1-range', type=int, default=2,
 parser.add_argument('--prr-z2-range', type=int, default=2,
                     help='z2 range for plot-reproduce-result (default: 2)')
 parser.add_argument('--prr-z1-interval', type=int, default=0.2,
-                    help='interval of z1 for plot-reproduce-result (default: 0.1)')
+                    help='interval of z1 for plot-reproduce-result (default: 0.2)')
 parser.add_argument('--prr-z2-interval', type=int, default=0.2,
-                    help='interval of z2 for plot-reproduce-result (default: 0.1)')
+                    help='interval of z2 for plot-reproduce-result (default: 0.2)')
 
 args = parser.parse_args()
 BATCH_SIZE = args.batch_size
@@ -195,7 +195,7 @@ def plot_along_axis(epoch):
             sample[idx][1] = z2[j]
 
     sample = model.decode(sample).cpu().view(num_z, 1, 28, 28)
-    save_generated_img(sample, 'plot_along_z1_and_z2_axis_', epoch, num_z1)
+    save_generated_img(sample, 'plot_along_z1_and_z2_axis', epoch, num_z1)
 
 
 # --- main function --- #
