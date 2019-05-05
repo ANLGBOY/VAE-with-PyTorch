@@ -16,7 +16,7 @@ The following results are made with the default setting. (command: python main.p
 <tr>
 <td><img src = 'results/reconstruction_80.png' width = '300px'>
 <td><img src = 'results/sample_80.png' width = '300px'>
-<td><img src = 'results/plot_along_z1_and_z2_axis__80.png' width = '300px'>
+<td><img src = 'results/plot_along_z1_and_z2_axis_80.png' width = '300px'>
 </tr>
 </table>
 
