@@ -18,8 +18,8 @@ parser = argparse.ArgumentParser(
     description="PyTorch implementation of VAE for MNIST")
 parser.add_argument('--batch-size', type=int, default=128,
                     help='batch size for training (default: 128)')
-parser.add_argument('--epochs', type=int, default=80,
-                    help='number of epochs to train (default: 80)')
+parser.add_argument('--epochs', type=int, default=20,
+                    help='number of epochs to train (default: 20)')
 parser.add_argument('--z-dim', type=int, default=2,
                     help='dimension of hidden variable Z (default: 2)')
 parser.add_argument('--log-interval', type=int, default=100,
@@ -53,9 +53,9 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 # --- data loading --- #
-train_data = datasets.MNIST('./data', train=True, download=True,
+train_data = datasets.FashionMNIST('./data', train=True, download=True,
                             transform=transforms.ToTensor())
-test_data = datasets.MNIST('./data', train=False,
+test_data = datasets.FashionMNIST('./data', train=False,
                            transform=transforms.ToTensor())
 
 # pin memory provides improved transfer speed

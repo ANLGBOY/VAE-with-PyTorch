@@ -1,5 +1,5 @@
-# Variational Auto-Encoder(VAE) for MNIST
-PyTorch implementation of VAE for MNIST
+# Variational Auto-Encoder(VAE) for Fashion MNIST
+PyTorch implementation of VAE for Fashion MNIST
 
 ## Description
 This code is written for practice. It's almost as same as PyTorch's official example(check the reference below).
@@ -14,9 +14,9 @@ The following results are made with the default setting. (command: python main.p
 <td> Manifold(num of z = 2) </td>
 </tr>
 <tr>
-<td><img src = 'results/reconstruction_80.png' width = '300px'>
-<td><img src = 'results/sample_80.png' width = '300px'>
-<td><img src = 'results/plot_along_z1_and_z2_axis_80.png' width = '300px'>
+<td><img src = 'results/reconstruction_20.png' width = '300px'>
+<td><img src = 'results/sample_20.png' width = '300px'>
+<td><img src = 'results/plot_along_z1_and_z2_axis_20.png' width = '300px'>
 </tr>
 </table>
 
