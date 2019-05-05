@@ -21,8 +21,8 @@ The following results are made with the default setting. (command: python main.p
 </table>
 
 
-## References 
-The implementation is based on the projects:
-[1] https://github.com/pytorch/examples/blob/master/vae/main.py
-[2] https://github.com/hwalsuklee/tensorflow-mnist-VAE/
+## References
+The implementation is based on:  
+[1] https://github.com/pytorch/examples/blob/master/vae/main.py  
+[2] https://github.com/hwalsuklee/tensorflow-mnist-VAE/  
 
