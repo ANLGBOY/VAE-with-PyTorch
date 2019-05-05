@@ -21,15 +21,8 @@ The following results are made with the default setting. (command: python main.p
 </table>
 
 
-## References
-The implementation is based on:
+## References 
+The implementation is based on the projects:
 [1] https://github.com/pytorch/examples/blob/master/vae/main.py
 [2] https://github.com/hwalsuklee/tensorflow-mnist-VAE/
 
-
-## References
-The implementation is based on the projects:  
-[1] https://github.com/oduerr/dl_tutorial/tree/master/tensorflow/vae  
-[2] https://github.com/fastforwardlabs/vae-tf/tree/master  
-[3] https://github.com/kvfrans/variational-autoencoder  
-[4] https://github.com/altosaar/vae
