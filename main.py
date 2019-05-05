@@ -18,12 +18,12 @@ parser = argparse.ArgumentParser(
     description="PyTorch implementation of VAE for MNIST")
 parser.add_argument('--batch-size', type=int, default=128,
                     help='batch size for training (default: 128)')
-parser.add_argument('--epochs', type=int, default=100,
-                    help='number of epochs to train (default: 100)')
+parser.add_argument('--epochs', type=int, default=60,
+                    help='number of epochs to train (default: 60)')
 parser.add_argument('--z-dim', type=int, default=2,
                     help='dimension of hidden variable Z (default: 2)')
-parser.add_argument('--log-interval', type=int, default=50,
-                    help='interval between logs about training status (default: 50)')
+parser.add_argument('--log-interval', type=int, default=100,
+                    help='interval between logs about training status (default: 100)')
 parser.add_argument('--learning-rate', type=int, default=1e-3,
                     help='learning rate for Adam optimizer (default: 1e-3)')
 parser.add_argument('--prr', type=bool, default=True,
@@ -71,11 +71,11 @@ test_loader = torch.utils.data.DataLoader(test_data,
 class VAE(nn.Module):
     def __init__(self):
         super().__init__()
-        self.fc1 = nn.Linear(784, 400)
-        self.fc21 = nn.Linear(400, Z_DIM)  # fc21 for mean of Z
-        self.fc22 = nn.Linear(400, Z_DIM)  # fc22 for log variance of Z
-        self.fc3 = nn.Linear(Z_DIM, 400)
-        self.fc4 = nn.Linear(400, 784)
+        self.fc1 = nn.Linear(784, 500)
+        self.fc21 = nn.Linear(500, Z_DIM)  # fc21 for mean of Z
+        self.fc22 = nn.Linear(500, Z_DIM)  # fc22 for log variance of Z
+        self.fc3 = nn.Linear(Z_DIM, 500)
+        self.fc4 = nn.Linear(500, 784)
 
     def encode(self, x):
         h1 = F.relu(self.fc1(x))
@@ -165,8 +165,10 @@ def test(epoch):
 def save_generated_img(image, name, epoch, nrow=8):
     if not os.path.exists('results'):
         os.makedirs('results')
-    save_path = 'results/'+name+'_'+str(epoch)+'.png'
-    save_image(image, save_path, nrow=nrow)
+
+    if epoch % 5 == 0:
+        save_path = 'results/'+name+'_'+str(epoch)+'.png'
+        save_image(image, save_path, nrow=nrow)
 
 
 def sample_from_model(epoch):
