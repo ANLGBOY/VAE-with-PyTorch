@@ -14,9 +14,9 @@ The following results are made with the default setting. (command: python main.p
 <td> Manifold(num of z = 2) </td>
 </tr>
 <tr>
-<td><img src = 'results/reconstruction_20.png' width = '300px'>
-<td><img src = 'results/sample_20.png' width = '300px'>
-<td><img src = 'results/plot_along_z1_and_z2_axis_20.png' width = '300px'>
+<td><img src = 'results/reconstruction_20.png' width = '300px'></td>
+<td><img src = 'results/sample_20.png' width = '300px'></td>
+<td><img src = 'results/plot_along_z1_and_z2_axis_20.png' width = '300px'></td>
 </tr>
 </table>
 
